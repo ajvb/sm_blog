@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+<!--
+{% block title %}{{ post.title }}{% endblock %}
+{% block meta %}
+<meta name="description" content="{{ post.body|truncatewords_html:25 }}" />
+{% endblock %}
+-->
+
+{% block content %}
+<div class="block">
+        <h2 id="title">{{ post.title }}</h2>
+        <div class="info border-bottom">
+            Posted {{ post.timestamp|naturalday }} by NAME
+        </div>
+
+        <div class="entry">
+                {{ post.body }}
+                <!--{{ post.body|markdown:"codehilite" }}-->
+        </div>
+        <div class="bottom">
+        <a href='{{ entry.get_absolute_url }}'>Slug</a>
+        <a href="">Edit</a>
+        <a href="">Delete</a>
+        </div>
+</div>
+{% endblock %}

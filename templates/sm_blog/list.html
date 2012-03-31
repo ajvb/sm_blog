@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+{% for post in blog_list %}
+<div class="block">
+    <h2 id="title"><a href='{{ entry.get_absolute_url }}'>{{ entry.title }}</a></h2>
+    <div class="info border-bottom">
+        Posted {{ post.timestamp|naturalday }} by NAME
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
